@@ -25,7 +25,7 @@ class Solution:
         counter = 0
         final = []
 
-        twoCounter = 0
+        twoCounter = 0 # lol im so dumb, this is just a loop with less abstraction, that makes this On2
         currentnumber = 1
 
         while counter < len(nums):
@@ -45,8 +45,35 @@ class Solution:
         
         return final
     
+        # apparently time limit exceeded
+    
+    def productExceptSelf3(self, nums: List[int]) -> List[int]:
+        answer = []
+        fix = 1
 
-    # apparently time limit exceeded
+        for i in range(len(nums)):
+            if i == 0:
+                answer.append(fix)
+            else:
+                fix *= nums[i -1]
+                answer.append(fix)
+
+        fix = 1
+
+        for i in range(len(nums) - 1, -1, -1):
+            if i == len(nums) - 1:
+                pass
+            else:
+                fix *= nums[i + 1] 
+                temp = fix * answer[i]
+                answer[i] = temp
+
+        return answer
+
+
+    
+
+
 
 
     
@@ -55,5 +82,5 @@ class Solution:
 
 
 solution = Solution()
-result = solution.productExceptSelf2([-1,1,0,-3,3])
+result = solution.productExceptSelf3([1,2,3,4])
 print(result)
