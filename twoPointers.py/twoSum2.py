@@ -26,9 +26,9 @@ class Solution:
             if total == target: # if its the correct solution
             
                 return [pointer1 + 1, pointer2 + 1]
-            elif (total > target):
+            elif (total > target): # if its larger the big pointer goes down
                 pointer2 -= 1
-            elif (total < target):
+            elif (total < target):  # if its smaller the small pointer goes up!
                 pointer1 += 1
 
 
