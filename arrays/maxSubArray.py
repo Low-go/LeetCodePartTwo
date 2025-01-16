@@ -2,7 +2,31 @@ from typing import List
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        res = sum( [-1, -2, 6, -2, -1])
+
+        if len(nums) == 1:
+            return nums[0]
+
+        res = 0
+
+        summation = sum(nums) # get max array
+
+        l, r = 0, len(nums) - 1
+
+        for i in range (len(nums)):
+            
+            storeLeft = nums[l]
+            storeRight = nums[r]
+
+            if summation - storeLeft > summation - storeRight:
+                l += 1
+                summation = summation - storeLeft
+            else:
+                r -= 1
+                summation = summation - storeRight
+            
+            if summation > res:
+                res = summation
+
 
         return res
     
@@ -28,5 +52,5 @@ problem
 '''
 
 solution = Solution()
-result = solution.maxSubArray(3)
+result = solution.maxSubArray([2,2,2])
 print(result)
