@@ -29,7 +29,25 @@ class Solution:
 
 
         return res
-    
+
+        # my code was bad, did not even pass the basic test cases
+
+
+    def maxSubArray2(self, nums: List[int]) -> int:
+        # we begin by initializing the largest array number to 
+        # the first value in the array
+
+        maxSub = nums[0] 
+        curSum = 0
+
+        for n in nums:
+            if curSum < 0: # if it gets negative we reset it back because nothing before really matters if it got this bad
+                curSum = 0
+            curSum += n
+            maxSub = max(maxSub, curSum) # get whichever one is higher and save it. 
+        return maxSub
+
+        # This is such a brilliant yet simple solution and it works at O(n) time. Wow
 '''
 I LOWKEY think I have an algorithm that works without using the popular algorithm for this 
 problem
