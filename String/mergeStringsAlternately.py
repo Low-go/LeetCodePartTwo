@@ -33,6 +33,24 @@ class Solution:
         return res
 
 
+    #alternatively
+    def mergeAlternately2(self, word1: str, word2: str) -> str:
+        res = []
+
+        min_length = min(len(word1), len(word2)) # grab the shortest length to loop
+
+        for i in range(min_length): # append both till min_length
+            res.append(word1[i])
+            res.append(word2[i])
+
+        res.extend(word1[min_length:]) # min_length: says starting from min length slice or add all the rest of the letters
+        res.extend(word2[min_length:]) # this is also due to extend which addds all items from an iterable
+
+        return ''.join(res) # we used an array over a strong because strings take up memnory and are immutable
+        
+
+
+
 solution = Solution()
-result = solution.mergeAlternately("ab", "pqrs")
+result = solution.mergeAlternately2("ab", "pqrs")
 print(result)
