@@ -17,6 +17,8 @@ class Solution:
             else:
                 map[num] = i
         return []    
+    
+
 
 
 
