@@ -46,6 +46,9 @@ class Solution:
         return res
 
 
+        # this is such an interesting solution and yet so complex
+
+
 
 solution = Solution()
 result = solution.longestPalindrome2("cbbd")
