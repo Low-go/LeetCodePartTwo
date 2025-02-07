@@ -37,12 +37,28 @@ class Solution:
                     else:
                         j += r
                         leftTurn = True
-                        
-
         return res
 
 
+    # online solution does not look to diff from mine
+    def convert2(self, s: str, numRows: int) -> str:
+        if numRows == 1: return s
 
+        res = ""
+        for r in range(numRows):
+            increment = 2 * (numRows - 1)
+            for i in range (r, len(s), increment ): # i like his use of r here, we start from the next index 
+                res += s[i]
+
+                if (r > 0 and r < numRows -1 and i + increment - 2 * 
+                    r < len(s)): # this is how he is checking for middle rows
+                    
+                    res += s[i + increment - 2 * r]
+
+        return res
+
+# ok so his code is probably faster more concise and better than mine
+# but damn if it isn't less readable
 
 solution = Solution()
 result = solution.convert("paypalishiring", 3)
