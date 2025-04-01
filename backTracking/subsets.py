@@ -13,6 +13,8 @@ class Solution:
 
             # in this case we are out of bounds
             if i >= len(nums):
+                # without copy we only store references, and any 
+                # changes will thus be reflected
                 res.append(subset.copy())
                 return
             
