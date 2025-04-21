@@ -34,16 +34,6 @@ class Solution:
         return res
         
 
-
-    
-
-
-
-        
-        return res
-
-
-
 root1 = TreeNode(1)
 root1.left = TreeNode(2)
 root1.right = TreeNode(3)
