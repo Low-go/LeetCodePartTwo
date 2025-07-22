@@ -9,10 +9,14 @@ class ListNode:
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
+        if head is None or head.next is None:
+            return False
+        
         pointer1 = head
+
         pointer2 = head.next
 
-        while pointer1.val != pointer2.val:
+        while pointer1 != pointer2:
 
             if pointer2.next is None:
                 return False
@@ -27,7 +31,7 @@ class Solution:
             pointer1 = pointer1.next
 
         return True
-
+    
 solution = Solution()
 
 node1 = ListNode(3)
