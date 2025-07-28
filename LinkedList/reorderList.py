@@ -34,6 +34,8 @@ class Solution:
                 left_Turn = True
                 dummy2 = store[r]
                 r -= 1
+        dummy.next = None
+
 
         # for i in store:
         #     print (i.val)
