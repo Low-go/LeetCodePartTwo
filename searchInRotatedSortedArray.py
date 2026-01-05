@@ -20,7 +20,36 @@ class Solution:
                 pointer += 1
         
         return -1
+    
+
+
+    # Proper binary searchh implementation
+    def search2(self, nums: List[int], target: int) -> int:
+        # lets try and do a binary search if i even remember it correctly
+
+        small = 0
+        large = len(nums) - 1 
+
+        
+        while small <= large:
+            mid = (small + large) // 2
+
+            if target == nums[mid]:
+                return mid
+            
+            # Left Portion
+            if nums[small] <= nums[mid]:
+                if target > nums[mid] or target < nums[small]:
+                    small = mid + 1
+                else:
+                    pass
+
+            else:
+                pass
+
+        
+        return -1
 
 solution = Solution()
-result = solution.search([4,5,6,7,0,1,2], 0)
+result = solution.search2([4,5,6,7,0,1,2], 0)
 print(result)
